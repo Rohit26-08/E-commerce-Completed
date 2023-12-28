@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import login_page,login_page1,logout_page
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     
@@ -26,4 +28,4 @@ urlpatterns = [
      path('login1/',login_page1,name="login1"),
      path('logout/',logout_page,name='logout'),
     # path('logging/',loggging,name='logging')
-]
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

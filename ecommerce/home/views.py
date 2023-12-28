@@ -35,23 +35,8 @@ def shop(request):
     products=product.objects.all()
     return render(request,'shop.html',context={'products':products})
 
-def single(request):
-    return render(request,'single-post.html')
-def style(request):
-    return render(request,'styles.html')
-def thanks(request):
-    return render(request,'thank-you.html')
 
-# def single_product(request,slug):
-# def cart1(request,slug):
-   
-#    products=product.objects.get(slug=slug)
-#    user=user.request
-#    carts , _ =cart.objects.get_or_create(user=user,is_paid=False)
-#    cart_items=cartItems.objects.create(cart=cart,product=product)
-    
-  
-#    return HttpResponseRedirect(request.meta.get('HTTP_REFERER'))
+
 def pluscart(request):
     if request.method=='GET':
         prod_id=request.GET.get('prod_id')
@@ -149,25 +134,7 @@ def showcart(request):
         amount=0.0
         shipping_amount=100.0
         total_amount=0.0 
-        # coupon_object=0
-        # try:
-        #   if request.method=="POST": 
-        #       coupon=request.POST.get('coupon')
-        #       coupon_object=Coupon.objects.filter(coupon_code=coupon)
-        #       if not coupon_object.exists():
-        #           messages.warning(request,'Invalid')  
-        #           return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-        #       if cart2.coupon_object:
-        #           messages.warning(request,'Already Exit')  
-        #           return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-        #       cart2.coupon=coupon_object
-        #       cart2.save()
-        #       messages.warning(request,'Invalid')  
-        #       return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-        # except Exception as e:
-        #     print(e,'gbhjbvjhujgfyukjbv')  
-        #     coupon_object=Coupon.objects.filter(coupon_code=coupon)
-        # finally:
+       
         cart_product=[p for p in cart.objects.all() if p.user==user] 
         if cart_product:
             
@@ -191,22 +158,7 @@ def showcart(request):
         else:
              return render(request,'emptycart.html')
 
-        
-# def checkout(request):
-#     user=request.user
-#     add=User.objects.filter(user=user)
-#     return render(request,'checkout.html')
-# def shirts(request):
-    
-#     # try:
-#       cat=category.objects.get(category_name='shirts')
-#       cat1=product.objects.filter(category=cat)
-#       print(cat1)
-      
-      
-#     # except Exception as e:
-#     #     print(e)
-#       return HttpResponseRedirect(request.META.get('HTTP_REFERER'),{'cat':cat1})
+
 def search(request):
     if request.method=='GET':
      se=request.GET.get('data')

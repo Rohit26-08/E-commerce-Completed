@@ -5,7 +5,7 @@ from django.utils.text import slugify
 class category(models.Model):
     category_name=models.CharField(max_length=100)
     slug=models.SlugField(unique=True,blank=True,null=True)
-    category_image=models.ImageField(upload_to="category_img")
+
 
     def save(self,*args,**kwargs):
         self.slug=slugify(self.category_name)
@@ -31,6 +31,7 @@ class product(models.Model):
     description=models.TextField()
     color_variant=models.ManyToManyField(colorvariant,blank=True)
     size_variant=models.ManyToManyField(sizevariant,blank=True)
+    product_image=models.ImageField(upload_to="product_img")
     def save(self,*args, **kwargs):
         self.slug=slugify(self.product_name)
         super(product,self).save(*args,**kwargs)
@@ -41,9 +42,8 @@ class product(models.Model):
         return self.price + sizevariant.objects.get(size_name=size).price
 
 
-class productimage(models.Model):
-    product=models.ForeignKey(product,on_delete=models.CASCADE,related_name='image')
-    product_image=models.ImageField(upload_to="product_img")
+
+  
 class Coupon(models.Model):
     coupon_code=models.CharField(max_length=100)
     is_expired=models.BooleanField(default=False)

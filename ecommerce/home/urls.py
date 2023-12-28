@@ -16,22 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 
-from .views import index,search,pluscart,removecart,minuscart,about,single,showcart,blog,cart1,thanks,style,contact1,shop
+from .views import index,search,pluscart,removecart,minuscart,about,showcart,blog,cart1,contact1,shop
 
 urlpatterns = [
    
     path('',index,name='home'),
      path('about/',about,name='about'),
-        #   path('shirts/',shirts,name='shirts'),
+
      
-      path('single/',single,name='single'),
+     
       path('pluscart/',pluscart,name='pluscart'),
         path('minuscart/',minuscart,name='minuscart'),
            path('removecart/',removecart,name='removecart'),
        path('blog/',blog,name='blog'),
-        path('thanks/',thanks,name='thanks'),
-         path('style/',style,name='style'),
+
           path('contact/',contact1,name='contact'),
            path('shop/',shop,name='shop'),
          path('cart1/',cart1,name="cart1"),
@@ -39,6 +40,6 @@ urlpatterns = [
              path('search/',search,name='search'),
          
 
-        #    path('single-product/',single_product,name='single_product'),
+    
    
-]
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

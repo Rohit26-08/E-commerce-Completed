@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{%load static%}
 {% block content %}
 <section class="site-banner jarallax min-height300 padding-large" style="background: url(images/hero-image.jpg) no-repeat; background-position: top;">
       <div class="container">
@@ -39,7 +40,7 @@
                     {%for product in products%}
                     <div class="product-item col-lg-4 col-md-6 col-sm-6">
                       <div class="image-holder">
-                        <img src="/static/{{product.image.first.product_image}}" alt="Books" class="product-image">
+                        <img src="{{product.product_image.url}}" alt="Books" class="product-image">
                       </div>
                       <div class="cart-concern">
                         <div class="cart-button d-flex justify-content-between align-items-center">
@@ -64,909 +65,7 @@
                       </div>
                     </div>{%endfor%}
                     
-                    {% comment %} <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products2.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Stylish Grey T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$35.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products3.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Silk White Shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$35.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products4.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Grunge Hoodie</a>
-                        </h3>
-                        <div class="item-price text-primary">$30.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products5.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Full sleeve Jeans jacket</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products6.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Grey Check Coat</a>
-                        </h3>
-                        <div class="item-price text-primary">$30.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products7.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Long Sleeve T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products8.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Half Sleeve T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$35.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products13.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Orange white Nike</a>
-                        </h3>
-                        <div class="item-price text-primary">$55.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products14.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Running Shoe</a>
-                        </h3>
-                        <div class="item-price text-primary">$65.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products15.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Tennis Shoe</a>
-                        </h3>
-                        <div class="item-price text-primary">$80.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products16.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Nike Brand Shoe</a>
-                        </h3>
-                        <div class="item-price text-primary">$65.00</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="shoes" data-tab-content>
-                  <div class="row d-flex flex-wrap">
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products13.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Orange white Nike</a>
-                        </h3>
-                        <div class="item-price text-primary">$55.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products14.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Running Shoe</a>
-                        </h3>
-                        <div class="item-price text-primary">$65.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products15.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Tennis Shoe</a>
-                        </h3>
-                        <div class="item-price text-primary">$80.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products16.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Nike Brand Shoe</a>
-                        </h3>
-                        <div class="item-price text-primary">$65.00</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="tshirts" data-tab-content>
-                  <div class="row d-flex flex-wrap">
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products3.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Silk White Shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$35.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products8.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">White Half T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$30.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products5.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Ghee Half T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products7.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Long Sleeve T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="pants" data-tab-content>
-                  <div class="row d-flex flex-wrap">
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products1.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Half sleeve T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products4.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Grunge Hoodie</a>
-                        </h3>
-                        <div class="item-price text-primary">$30.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products7.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Long Sleeve T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products2.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Stylish Grey Pant</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="hoodie" data-tab-content>
-                  <div class="row d-flex flex-wrap">
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products17.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">White Hoodie</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products4.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Navy Blue Hoodie</a>
-                        </h3>
-                        <div class="item-price text-primary">$45.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products18.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Dark Green Hoodie</a>
-                        </h3>
-                        <div class="item-price text-primary">$35.00</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="outer" data-tab-content>
-                  <div class="row d-flex flex-wrap">
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products3.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Silk White Shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$ 35.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products4.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Grunge Hoodie</a>
-                        </h3>
-                        <div class="item-price text-primary">$ 30.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products6.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Grey Check Coat</a>
-                        </h3>
-                        <div class="item-price text-primary">$ 30.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products7.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Long Sleeve T-shirt</a>
-                        </h3>
-                        <div class="item-price text-primary">$ 40.00</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="jackets" data-tab-content>
-                  <div class="row d-flex flex-wrap">
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products5.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Full Sleeve Jeans Jacket</a>
-                        </h3>
-                        <div class="item-price text-primary">$40.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products2.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Stylish Grey Coat</a>
-                        </h3>
-                        <div class="item-price text-primary">$35.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products6.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Grey Check Coat</a>
-                        </h3>
-                        <div class="item-price text-primary">$35.00</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="accessories" data-tab-content>
-                  <div class="row d-flex flex-wrap">
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products19.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Stylish Women Bag</a>
-                        </h3>
-                        <div class="item-price text-primary">$35.00</div>
-                      </div>
-                    </div>
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="/static/images/selling-products20.jpg" alt="Books" class="product-image">
-                      </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
-                          </button>
-                          <button type="button" class="view-btn tooltip
-                              d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
-                          </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
-                          <a href="single-product.html">Stylish Gadgets</a>
-                        </h3>
-                        <div class="item-price text-primary">$30.00</div>
-                      </div>
-                    </div> {% endcomment %}
+                 
                   </div>
                 </div>
               </div>
@@ -1033,26 +132,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="widgets widget-price-filter">
-                <h5 class="widget-title">Filter By Price</h5>
-                <ul class="product-tags sidebar-list list-unstyled">
-                  <li class="tags-item">
-                    <a href="">Less than $10</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">$10- $20</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">$20- $30</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">$30- $40</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">$40- $50</a>
-                  </li>
-                </ul>
-              </div>
+              
             </div>
           </aside>
           
@@ -1074,7 +154,7 @@
           <article class="col-md-4 post-item">
             <div class="image-holder zoom-effect">
               <a href="/single/">
-                <img src="/static/images/post-img1.jpg" alt="post" class="post-image">
+                <img src="{%static 'images/post-img1.jpg' %}" alt="post" class="post-image">
               </a>
             </div>
             <div class="post-content d-flex">
@@ -1093,7 +173,7 @@
           <article class="col-md-4 post-item">
             <div class="image-holder zoom-effect">
               <a href="/single/">
-                <img src="/static/images/post-img2.jpg" alt="post" class="post-image">
+                <img src="{%static 'images/post-img2.jpg' %}" alt="post" class="post-image">
               </a>
             </div>
             <div class="post-content d-flex">
@@ -1112,7 +192,7 @@
           <article class="col-md-4 post-item">
             <div class="image-holder zoom-effect">
               <a href="/single/">
-                <img src="/static/images/post-img3.jpg" alt="post" class="post-image">
+                <img src="{%static 'images/post-img3.jpg' %}" alt="post" class="post-image">
               </a>
             </div>
             <div class="post-content d-flex">
@@ -1135,11 +215,11 @@
     <section id="brand-collection" class="padding-medium bg-light-grey">
       <div class="container">
         <div class="d-flex flex-wrap justify-content-between">
-          <img src="/static/images/brand1.png" alt="phone" class="brand-image">
-          <img src="/static/images/brand2.png" alt="phone" class="brand-image">
-          <img src="/static/images/brand3.png" alt="phone" class="brand-image">
-          <img src="/static/images/brand4.png" alt="phone" class="brand-image">
-          <img src="/static/images/brand5.png" alt="phone" class="brand-image">
+          <img src="{%static 'images/brand1.png' %}" alt="phone" class="brand-image">
+          <img src="{%static 'images/brand2.png' %}" alt="phone" class="brand-image">
+          <img src="{%static 'images/brand3.png' %}" alt="phone" class="brand-image">
+          <img src="{%static 'images/brand4.png' %}" alt="phone" class="brand-image">
+          <img src="{%static 'images/brand5.png' %}" alt="phone" class="brand-image">
         </div>
       </div>
     </section>
@@ -1149,42 +229,42 @@
         <div class="section-header">
           <h2 class="section-title">Follow our instagram</h2>
         </div>
-        <p>Our official Instagram account <a href="#">@ultras</a> or <a href="#">#ultras_clothing</a>
+        <p>Our official Instagram account <a href="#">@ankushh</a> or <a href="#">E-commerce</a>
         </p>
         <div class="row d-flex flex-wrap justify-content-between">
           <div class="col-lg-2 col-md-4 col-sm-6">
             <figure class="zoom-effect">
-              <img src="/static/images/insta-image1.jpg" alt="instagram" class="insta-image">
+              <img src="{%static 'images/insta-image1.jpg' %}" alt="instagram" class="insta-image">
               <i class="icon icon-instagram"></i>
             </figure>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6">
             <figure class="zoom-effect">
-              <img src="/static/images/insta-image2.jpg" alt="instagram" class="insta-image">
+              <img src="{%static 'images/insta-image2.jpg' %}" alt="instagram" class="insta-image">
               <i class="icon icon-instagram"></i>
             </figure>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6">
             <figure class="zoom-effect">
-              <img src="/static/images/insta-image3.jpg" alt="instagram" class="insta-image">
+              <img src="{%static 'images/insta-image3.jpg' %}" alt="instagram" class="insta-image">
               <i class="icon icon-instagram"></i>
             </figure>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6">
             <figure class="zoom-effect">
-              <img src="/static/images/insta-image4.jpg" alt="instagram" class="insta-image">
+              <img src="{%static 'images/insta-image4.jpg' %}" alt="instagram" class="insta-image">
               <i class="icon icon-instagram"></i>
             </figure>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6">
             <figure class="zoom-effect">
-              <img src="/static/images/insta-image5.jpg" alt="instagram" class="insta-image">
+              <img src="{%static 'images/insta-image5.jpg' %}" alt="instagram" class="insta-image">
               <i class="icon icon-instagram"></i>
             </figure>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6">
             <figure class="zoom-effect">
-              <img src="/static/images/insta-image6.jpg" alt="instagram" class="insta-image">
+              <img src="{%static 'images/insta-image6.jpg' %}" alt="instagram" class="insta-image">
               <i class="icon icon-instagram"></i>
             </figure>
           </div>

@@ -5,11 +5,10 @@ from .models import *
 # Register your models here.
 admin.site.register(Coupon)
 admin.site.register(category)
-class productImageadmin(admin.StackedInline):
-    model=productimage
+
 class productadmin(admin.ModelAdmin):
     list_display=['product_name','price']
-    inlines=[productImageadmin]
+    
 
 class colorvariantadmin(admin.ModelAdmin):
     list_display=['color_name','price']
