@@ -11,6 +11,7 @@ import razorpay
 from contact.models import contact 
 # Create your views here.
 def index(request):
+    
     context={'products':product.objects.all()}
     return render(request,'index.html',context)
 
@@ -102,7 +103,7 @@ def minuscart(request):
 def removecart(request):
     if request.method=='GET':
         prod_id=request.GET.get('prod_id')
-        c=cart.objects.get(Q(product_id=prod_id)& Q(user=request.user))
+        c=cart.objects.filter(Q(product_id=prod_id)& Q(user=request.user))
        
         c.delete()
         amount=0.0
@@ -122,6 +123,8 @@ def removecart(request):
                       'amount':amount,
                        'totalamount':amount+shipping_amount}
             return JsonResponse(data)
+        else:
+            return redirect('/shop/')
 def cart1(request):
     user=request.user
     prod=request.GET.get('prod_id')
@@ -204,3 +207,9 @@ def showcart(request):
 #     # except Exception as e:
 #     #     print(e)
 #       return HttpResponseRedirect(request.META.get('HTTP_REFERER'),{'cat':cat1})
+def search(request):
+    if request.method=='GET':
+     se=request.GET.get('data')
+     print(se)
+     a=product.objects.filter(product_name=se)
+     return render(request,'shop.html',context={'products':a})

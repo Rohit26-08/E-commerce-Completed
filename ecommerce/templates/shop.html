@@ -23,6 +23,7 @@
           <section id="selling-products" class="col-md-9 product-store">
             <div class="container">
               <ul class="tabs list-unstyled">
+                
                 <li data-tab-target="#all" class="active tab">All</li>
                 <li data-tab-target="#shoes" class="tab">Shoes</li>
                 <li data-tab-target="#tshirts" class="tab">Tshirts</li>
@@ -62,6 +63,7 @@
                         <div class="item-price text-primary">{{product.price}}₹</div>
                       </div>
                     </div>{%endfor%}
+                    
                     {% comment %} <div class="product-item col-lg-4 col-md-6 col-sm-6">
                       <div class="image-holder">
                         <img src="/static/images/selling-products2.jpg" alt="Books" class="product-image">
@@ -988,8 +990,8 @@
             <div class="sidebar">
               <div class="widgets widget-menu">
                 <div class="widget-search-bar">
-                  <form role="search" method="get" class="d-flex">
-                    <input class="search-field" placeholder="Search" type="text">
+                  <form action='/search' role="search" method="get" class="d-flex">
+                    <input class="search-field" placeholder="Search" name='data' type="text">
                     <button class="btn btn-dark"><i class="icon icon-search"></i></button>
                   </form>
                 </div> 

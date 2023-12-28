@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Bacasime Antique", serif;
+  font-family: "Poppins", sans-serif;
+}
+.first {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url(Image/banner.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+nav {
+  display: flex;
+  padding: 2px 6px;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  padding: 0%;
+  width: 150px;
+}
+nav ul li {
+  list-style: none;
+  font-size: 13px;
+
+  flex: 1;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+nav ul a {
+  text-decoration: none;
+  color: white;
+}
+.nav ul li::after {
+  content: '';
+
+
+  width: 0%;
+  height: 2px;
+  background: red;
+ 
+  display:block;
+
+  margin: auto;
+  transition: 0.5s;
+}
+.nav ul li:hover::after {
+  width: 100%;
+  
+}
+.contant{
+    color:white;
+    width: 90% ;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+left: 50%;
+    transform: translate(-50%,-50%);
+}
+.contant h1{
+    font-size: 41px;
+}
+.contant p{
+    margin: 10px 0 40px;
+    
+}
+.contant1{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.contant1:hover{
+    border:1px solid red;
+    transition: 1s;
+    background-color: red;
+}
+/*Course css start*/
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top:80px;
+}
+.course h1{
+
+font-size: 32px;
+font-weight: 600;
+}
+.course p{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 12px;
+    padding: 10px;
+    display:inline-blocks
+
+}
+.row{
+  margin-top: 5%;
+  justify-content: space-between;
+  
+  
+  
+  display: flex;
+  
+  
+ 
+ 
+  
+}
+.row div p{
+  line-height: 22px;
+
+}
+.div1{
+  background-color: rgb(255, 222, 173);
+  border-radius: 10px;
+  flex-basis: 31%;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  transition: 0.5;
+ 
+}
+h3{
+  text-align: center;
+  font-weight: 400;
+}
+.div1:hover{
+  box-shadow: 0 0 12px 2px rgba(4,9,30,0.5);
+
+}
+.campus{
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding-top: 5% ;
+
+}
+  
+
+
+

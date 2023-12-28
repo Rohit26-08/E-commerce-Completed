@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import index,pluscart,removecart,minuscart,about,single,showcart,blog,cart1,thanks,style,contact1,shop
+from .views import index,search,pluscart,removecart,minuscart,about,single,showcart,blog,cart1,thanks,style,contact1,shop
 
 urlpatterns = [
    
@@ -36,6 +36,7 @@ urlpatterns = [
            path('shop/',shop,name='shop'),
          path('cart1/',cart1,name="cart1"),
          path('showcart/',showcart,name='showcart'),
+             path('search/',search,name='search'),
          
 
         #    path('single-product/',single_product,name='single_product'),

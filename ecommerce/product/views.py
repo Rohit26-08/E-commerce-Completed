@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import product
+from django.contrib.auth.decorators import login_required
+@login_required(login_url='/account/login1/')
 def single_product(request,slug):
   try:
      products=product.objects.get(slug=slug)
